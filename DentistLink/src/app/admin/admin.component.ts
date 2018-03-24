@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-
-  constructor() { }
+  users: any[];
+  constructor() { 
+    this.users = [{uName:'user1',type:'PCP'},{uName:'user2',type:'CC'}];
+  }
 
   ngOnInit() {
   }

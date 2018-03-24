@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component'
 import { AdminComponent } from './admin/admin.component'
 import { UsersComponent } from './users/users.component'
+import { AppointmentComponent } from './appointment/appointment.component';
 
 const routes: Routes = [
   {
@@ -23,10 +24,18 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: HomeComponent
+    component: AdminComponent
   },
   {
-    path: 'user',
+    path: 'appointment',
+    component: AppointmentComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'resetPassword',
     component: UsersComponent
   },
   { 
