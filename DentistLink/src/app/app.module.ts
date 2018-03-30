@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { ApiInterceptor } from './shared/services/api-interceptor';
 
 import { UserAuthService} from './shared/services/user-auth.service';
 
@@ -18,6 +20,8 @@ import { WelcomeNavbarComponent } from './shared/components/welcome-navbar/welco
 import { HomeNavbarComponent } from './shared/components/home-navbar/home-navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { CurrentUserService } from './shared/services/current-user.service';
+import { JwtService } from './shared/services/jwt.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,12 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [UserAuthService],
+  providers: [UserAuthService, JwtService ,CurrentUserService, 
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: ApiInterceptor, 
+      multi: true 
+  } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

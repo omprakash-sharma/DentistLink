@@ -16,8 +16,8 @@ export class UserAuthService {
 
   // get token 
   getAuthToken(reqObj):Observable<HttpResponse>{
-    return this.http.post("http://72c1aca9.ngrok.io/api/sessions", reqObj);
-    //return this.http.get(`http://localhost:3000/data/${reqObj}`);
+    //return this.http.post("http://72c1aca9.ngrok.io/api/sessions", reqObj);
+    return this.http.get(`http://localhost:3000/data`);
   };
 
 }
