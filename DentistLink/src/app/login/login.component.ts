@@ -14,10 +14,17 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   userInfo :loginType;
   reqTokenObj = <authType>{};
-
+  token = String;
 
   constructor(private fb: FormBuilder, private router: Router, private uAuthService: UserAuthService, private cs: CurrentUserService) { 
     this.createForm();
+  }
+  ngOnInit() {
+    // this.cs.isAuthenticated.subscribe(res =>{
+    //   this.token = this.cs.getCurrentUser();
+     
+    //   console.log(this.loggedUserInfo);
+    // });
   }
   createForm(){
     this.loginForm = this.fb.group({
@@ -46,8 +53,6 @@ export class LoginComponent implements OnInit {
     }
   };
 
-  ngOnInit() {
-  }
 
 }
 
