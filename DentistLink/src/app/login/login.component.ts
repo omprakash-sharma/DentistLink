@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
     if(this.userInfo.userName && this.userInfo.userPassword){
       this.reqTokenObj.email = this.userInfo.userName;
       this.reqTokenObj.password = this.userInfo.userPassword;
-      this.uAuthService.getAuthToken(this.reqTokenObj).subscribe(res => {
-        console.log(res);
+      this.uAuthService.getAuthToken(this.reqTokenObj).subscribe(success => {
+        console.log(success);
         
-        this.cs.setAuth(res[0]);
-        let _user =this.cs.getCurrentUser();
+        //this.cs.setAuth(res);
+        //let _user =this.cs.getCurrentUser();
         this.router.navigate(['/home']);
 
       }, err => {
