@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component'
 import { UsersComponent } from './users/users.component'
 import { AppointmentComponent } from './appointment/appointment.component';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [
   {
@@ -36,12 +38,24 @@ const routes: Routes = [
     component: AppointmentComponent
   },
   {
+    path: 'create-appointment',
+    component: CreateAppointmentComponent
+  },
+  {
     path: 'users',
     component: UsersComponent
   },
   {
     path: 'resetPassword',
     component: UsersComponent
+  },
+  {
+    path: 'aboutus',
+    component: AboutusComponent
+  },
+  {
+    path: 'contactus',
+    component: ContactusComponent
   },
   { 
     path: '**', 

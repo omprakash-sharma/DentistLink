@@ -24,6 +24,8 @@ import { CurrentUserService } from './shared/services/current-user.service';
 import { DataSourceService } from './shared/services/data-source.service';
 import { JwtService } from './shared/services/jwt.service';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
     HomeNavbarComponent,
     FooterComponent,
     ResetPasswordComponent,
-    CreateAppointmentComponent
+    CreateAppointmentComponent,
+    AboutusComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,
