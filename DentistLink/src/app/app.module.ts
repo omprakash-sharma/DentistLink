@@ -26,7 +26,7 @@ import { JwtService } from './shared/services/jwt.service';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
-
+import { AuthGuardGuard } from './shared/services/auth-guard.guard';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [UserAuthService, JwtService ,CurrentUserService,DataSourceService, 
+  providers: [AuthGuardGuard,UserAuthService, JwtService ,CurrentUserService,DataSourceService, 
     { 
       provide: HTTP_INTERCEPTORS, 
       useClass: ApiInterceptor, 

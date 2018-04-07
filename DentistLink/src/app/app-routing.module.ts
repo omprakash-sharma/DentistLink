@@ -10,6 +10,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { AuthGuardGuard } from './shared/services/auth-guard.guard';
 
 const routes: Routes = [
   {
@@ -27,22 +28,27 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    canActivate: [AuthGuardGuard],
     component: HomeComponent
   },
   {
     path: 'admin',
+    canActivate: [AuthGuardGuard],
     component: AdminComponent
   },
   {
     path: 'appointment',
+    canActivate: [AuthGuardGuard],
     component: AppointmentComponent
   },
   {
     path: 'create-appointment',
+    canActivate: [AuthGuardGuard],
     component: CreateAppointmentComponent
   },
   {
     path: 'users',
+    canActivate: [AuthGuardGuard],
     component: UsersComponent
   },
   {
